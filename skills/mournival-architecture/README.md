@@ -10,6 +10,23 @@ perspectives.
 - Architecture Value Steward: makes outcomes usable.
 - Architecture Assurance Steward: protects evidence and traceability.
 
+## How Roles Work Together
+
+Use `references/role-collaboration.md` for the full process.
+
+- Assurance checks evidence, traceability, source binding, and overstatement
+  first.
+- Risk reviews material harm, misuse, compliance, security, semantic drift, and
+  human-review triggers.
+- Value checks whether the artifact is understandable, useful, and actionable
+  without weakening evidence or hiding risk.
+- Decision consolidates the result into allowed next steps, blocked next steps,
+  required actions, and final status.
+
+Decision must not override Assurance or Risk vetoes. If roles disagree, preserve
+the disagreement and let the stricter evidence or risk position determine
+productive-use status.
+
 ## Review Order
 
 Internal evaluation:

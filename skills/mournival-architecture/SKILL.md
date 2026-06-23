@@ -44,6 +44,8 @@ this skill for evidence, risk, value, assurance, and go/no-go review.
 
 - Evaluate internally in this order: Assurance, Risk, Value, Decision.
 - Output role sections in this order: Decision, Risk, Value, Assurance.
+- Use `references/role-collaboration.md` to coordinate the four roles and
+  consolidate their findings.
 - Always end with Consolidated Mournival Decision.
 - Separate evidence, inference, assumption, and gap.
 - Never accept unsupported truth claims as productive knowledge.
@@ -79,6 +81,7 @@ If inputs are missing, mark them as gaps. Do not invent them.
 
 Review a Knowledge Claim or Knowledge Claim Candidate. Load:
 
+- `references/role-collaboration.md`
 - `references/prompts/review-knowledge-claim.md`
 - `references/rubrics/assurance-rubric.md`
 - `references/rubrics/risk-rubric.md`
@@ -88,6 +91,7 @@ Review a Knowledge Claim or Knowledge Claim Candidate. Load:
 Review uncertain, unverified, or contaminated information before it becomes a
 candidate. Load:
 
+- `references/role-collaboration.md`
 - `references/prompts/review-dirty-information.md`
 - `references/rubrics/assurance-rubric.md`
 - `references/rubrics/risk-rubric.md`
@@ -97,6 +101,7 @@ candidate. Load:
 Review conflicting claims, source conflicts, version conflicts, or context
 splits. Load:
 
+- `references/role-collaboration.md`
 - `references/prompts/review-contradiction.md`
 - `references/rubrics/assurance-rubric.md`
 - `references/rubrics/decision-rubric.md`
@@ -106,6 +111,7 @@ splits. Load:
 Review an architecture artifact for evidence, risk, usefulness, and decision
 readiness. Load:
 
+- `references/role-collaboration.md`
 - `references/prompts/review-artifact.md`
 - `references/rubrics/value-rubric.md`
 - `references/rubrics/decision-rubric.md`
@@ -115,6 +121,7 @@ readiness. Load:
 Run final gate review before productive use, release, training dataset
 inclusion, RAG ingestion, or decision record publication. Load:
 
+- `references/role-collaboration.md`
 - `references/review-process.md`
 - `references/rubrics/assurance-rubric.md`
 - `references/rubrics/risk-rubric.md`
@@ -127,6 +134,7 @@ Review AI-generated or AI-assisted architecture claims and artifacts for
 evidence, provenance, traceability, risk, value, human control, and acceptance
 decision. Load:
 
+- `references/role-collaboration.md`
 - `references/prompts/review-clean-ai.md`
 - `references/rubrics/assurance-rubric.md`
 - `references/rubrics/risk-rubric.md`
@@ -161,6 +169,7 @@ Findings should follow `assets/schemas/finding.schema.yaml`.
 Before final answer, verify:
 
 - all four role reviews are present
+- role collaboration order was followed
 - veto rules are applied
 - missing evidence is not treated as evidence
 - blocked next steps are explicit
