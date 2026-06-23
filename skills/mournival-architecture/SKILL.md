@@ -6,7 +6,9 @@ description: >
   and pipeline decisions. Use when the user asks for Mournival review, steward
   review, architecture assurance, evidence and traceability checks, risk review,
   value review, Clean AI governance review, go/no-go recommendations, or
-  consolidated architecture decisions.
+  consolidated architecture decisions, including governance diagrams, evidence
+  traceability diagrams, decision flow diagrams, risk/value/assurance maps, and
+  Mermaid or PlantUML review diagrams.
 ---
 
 # Mournival Architecture
@@ -29,6 +31,7 @@ Use for architecture governance reviews involving:
 - AI-generated claims or Clean AI governance checks
 - release gates and pipeline decisions
 - evidence, traceability, risk, value, or go/no-go assessment
+- governance, evidence traceability, decision flow, or review-state diagrams
 
 ## Do Not Use When
 
@@ -59,6 +62,8 @@ this skill for evidence, risk, value, assurance, and go/no-go review.
   block productive acceptance and mark the missing item as a gap.
 - Hand design creation back to the relevant architecture skill instead of
   filling missing design content during governance review.
+- When creating diagrams, create review/governance diagrams only and read
+  `references/diagrams.md`.
 
 ## Inputs Expected
 
@@ -141,6 +146,16 @@ decision. Load:
 - `references/rubrics/value-rubric.md`
 - `references/rubrics/decision-rubric.md`
 
+### /mournival diagram
+
+Create or review governance diagrams using Mermaid or PlantUML: evidence
+traceability, role finding flow, decision flow, veto map, review-state map, or
+productive-use gate. Load:
+
+- `references/diagrams.md`
+- `references/role-collaboration.md`
+- `references/review-process.md`
+
 ## Evidence Handling
 
 Use `references/review-process.md`.
@@ -177,6 +192,8 @@ Before final answer, verify:
 - human review requirement is explicit
 - final status is one of the allowed statuses
 - AI-generated content is not accepted as evidence by itself
+- diagrams are governance or review diagrams and do not create primary
+  enterprise, security, software, or DDD designs
 
 ## Boundaries
 
@@ -185,6 +202,8 @@ Before final answer, verify:
   verified source basis.
 - Do not approve high-risk productive use alone.
 - Do not hide uncertainty to make an artifact look usable.
+- Do not create primary architecture design diagrams; hand those to the relevant
+  architecture skill.
 
 ## Output Style
 
@@ -192,4 +211,6 @@ Before final answer, verify:
 - Prefer YAML for machine-readable review results.
 - Keep rationale short and specific.
 - Use role names exactly.
+- Use Mermaid for quick governance diagrams and PlantUML when the review flow
+  must be kept as architecture-as-code.
 - Do not add fictional persona language.

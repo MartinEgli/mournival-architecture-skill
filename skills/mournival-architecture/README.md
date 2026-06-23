@@ -52,3 +52,10 @@ Output order:
 - `/mournival review-artifact`
 - `/mournival final-check`
 - `/mournival clean-ai`
+- `/mournival diagram`
+
+## Diagrams
+
+Use `/mournival diagram` for governance diagrams only: evidence traceability,
+role finding flow, decision flow, veto maps, review states, and productive-use
+gates in Mermaid or PlantUML.
