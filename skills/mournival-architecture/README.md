@@ -26,3 +26,12 @@ Output order:
 3. Value Steward Review
 4. Assurance Steward Review
 5. Consolidated Mournival Decision
+
+## Modes
+
+- `/mournival review-claim`
+- `/mournival review-dirty-information`
+- `/mournival review-contradiction`
+- `/mournival review-artifact`
+- `/mournival final-check`
+- `/mournival clean-ai`

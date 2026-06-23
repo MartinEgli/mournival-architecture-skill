@@ -5,7 +5,8 @@ description: >
   contradictions, architecture artifacts, optimization candidates, release gates,
   and pipeline decisions. Use when the user asks for Mournival review, steward
   review, architecture assurance, evidence and traceability checks, risk review,
-  value review, go/no-go recommendations, or consolidated architecture decisions.
+  value review, Clean AI governance review, go/no-go recommendations, or
+  consolidated architecture decisions.
 ---
 
 # Mournival Architecture
@@ -25,6 +26,7 @@ Use for architecture governance reviews involving:
 - contradictory statements or competing versions
 - architecture artifacts
 - optimization or re-run candidates
+- AI-generated claims or Clean AI governance checks
 - release gates and pipeline decisions
 - evidence, traceability, risk, value, or go/no-go assessment
 
@@ -104,6 +106,12 @@ readiness. Load:
 Run final gate review before productive use, release, training dataset
 inclusion, RAG ingestion, or decision record publication.
 
+### /mournival clean-ai
+
+Review AI-generated or AI-assisted architecture claims and artifacts for
+evidence, provenance, traceability, risk, value, human control, and acceptance
+decision. Load `references/prompts/review-clean-ai.md`.
+
 ## Evidence Handling
 
 Use `references/review-process.md`.
@@ -138,6 +146,7 @@ Before final answer, verify:
 - allowed next steps are explicit
 - human review requirement is explicit
 - final status is one of the allowed statuses
+- AI-generated content is not accepted as evidence by itself
 
 ## Boundaries
 
