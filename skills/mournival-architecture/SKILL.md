@@ -35,6 +35,11 @@ Use for architecture governance reviews involving:
 Do not use when the user only needs a simple explanation, implementation task,
 or unstructured brainstorming without review or decision need.
 
+Do not use to create the primary enterprise, security, software, or DDD design.
+Use `enterprise-architecture`, `enterprise-security-architecture`,
+`software-architecture`, or `domain-driven-design` for design creation, then use
+this skill for evidence, risk, value, assurance, and go/no-go review.
+
 ## Mandatory Rules
 
 - Evaluate internally in this order: Assurance, Risk, Value, Decision.
@@ -48,6 +53,10 @@ or unstructured brainstorming without review or decision need.
 - Escalate high-risk decisions to Human Architect review.
 - Preserve user-provided IDs, labels, paths, commands, source names, and error
   strings exactly.
+- If evidence class, source, decision context, or intended next step is missing,
+  block productive acceptance and mark the missing item as a gap.
+- Hand design creation back to the relevant architecture skill instead of
+  filling missing design content during governance review.
 
 ## Inputs Expected
 
@@ -104,13 +113,25 @@ readiness. Load:
 ### /mournival final-check
 
 Run final gate review before productive use, release, training dataset
-inclusion, RAG ingestion, or decision record publication.
+inclusion, RAG ingestion, or decision record publication. Load:
+
+- `references/review-process.md`
+- `references/rubrics/assurance-rubric.md`
+- `references/rubrics/risk-rubric.md`
+- `references/rubrics/value-rubric.md`
+- `references/rubrics/decision-rubric.md`
 
 ### /mournival clean-ai
 
 Review AI-generated or AI-assisted architecture claims and artifacts for
 evidence, provenance, traceability, risk, value, human control, and acceptance
-decision. Load `references/prompts/review-clean-ai.md`.
+decision. Load:
+
+- `references/prompts/review-clean-ai.md`
+- `references/rubrics/assurance-rubric.md`
+- `references/rubrics/risk-rubric.md`
+- `references/rubrics/value-rubric.md`
+- `references/rubrics/decision-rubric.md`
 
 ## Evidence Handling
 
