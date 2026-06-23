@@ -1,0 +1,26 @@
+type: object
+required:
+  - finding_id
+  - type
+  - description
+  - severity
+properties:
+  finding_id:
+    type: string
+    example: F-001
+  type:
+    type: string
+    example: missing_evidence
+  description:
+    type: string
+  severity:
+    type: string
+    enum:
+      - low
+      - medium
+      - high
+      - critical
+  evidence:
+    type: string
+  recommendation:
+    type: string

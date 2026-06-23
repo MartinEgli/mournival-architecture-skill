@@ -1,0 +1,7 @@
+interface:
+  display_name: "Mournival Architecture"
+  short_description: "Four-steward architecture review"
+  default_prompt: "Use $mournival-architecture to review this architecture claim with Decision, Risk, Value, and Assurance stewards."
+
+policy:
+  allow_implicit_invocation: true

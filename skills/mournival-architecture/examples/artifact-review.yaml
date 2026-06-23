@@ -1,0 +1,82 @@
+decision_steward_review:
+  role_name: architecture_decision_steward
+  verdict: accepted_with_conditions
+  confidence: 0.81
+  risk_level: medium
+  rationale: Artifact can continue after missing gate conditions are added.
+  findings:
+    - finding_id: F-001
+      type: missing_gate
+      description: Productive-use gate is not documented.
+      severity: medium
+  required_actions:
+    - Add release gate section.
+  allowed_next_steps:
+    - rework
+  blocked_next_steps:
+    - publish_final
+
+risk_steward_review:
+  role_name: architecture_risk_steward
+  verdict: accepted_with_conditions
+  confidence: 0.69
+  risk_level: medium
+  rationale: Guidance could be applied outside intended system boundary.
+  findings:
+    - finding_id: F-002
+      type: boundary_risk
+      description: Scope boundary is implicit.
+      severity: medium
+  required_actions:
+    - Add explicit system boundary.
+  allowed_next_steps:
+    - stakeholder_review
+  blocked_next_steps:
+    - cross_domain_reuse
+
+value_steward_review:
+  role_name: architecture_value_steward
+  verdict: accepted_with_conditions
+  confidence: 0.75
+  risk_level: low
+  rationale: Artifact is useful but too detailed for management.
+  findings:
+    - finding_id: F-003
+      type: audience_gap
+      description: Management summary is missing.
+      severity: medium
+  required_actions:
+    - Add management summary.
+    - Define key terms.
+  allowed_next_steps:
+    - rework
+  blocked_next_steps: []
+
+assurance_steward_review:
+  role_name: architecture_assurance_steward
+  verdict: accepted_with_conditions
+  confidence: 0.74
+  risk_level: medium
+  rationale: Main claims are source-backed, but traceability is incomplete.
+  findings:
+    - finding_id: F-004
+      type: incomplete_traceability
+      description: Several claims lack fragment IDs.
+      severity: medium
+  required_actions:
+    - Add fragment IDs for main claims.
+  allowed_next_steps:
+    - rework
+  blocked_next_steps:
+    - training_dataset
+
+mournival_decision:
+  final_status: accepted_with_conditions
+  blocking_roles: []
+  reason: Artifact is viable after gate, boundary, summary, and traceability improvements.
+  next_actions:
+    - Add release gate.
+    - Add system boundary.
+    - Add management summary.
+    - Add fragment IDs.
+  human_review_required: true

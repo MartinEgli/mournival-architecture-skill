@@ -1,0 +1,90 @@
+decision_steward_review:
+  role_name: architecture_decision_steward
+  verdict: blocked
+  confidence: 0.86
+  risk_level: high
+  rationale: Information must not enter productive flow before source request.
+  findings:
+    - finding_id: F-001
+      type: missing_review_state
+      description: Dirty Information has no review state.
+      severity: high
+  required_actions:
+    - Convert to Source Request.
+    - Prevent productive use.
+  allowed_next_steps:
+    - source_request
+  blocked_next_steps:
+    - production_rag
+    - training_dataset
+
+risk_steward_review:
+  role_name: architecture_risk_steward
+  verdict: blocked
+  confidence: 0.82
+  risk_level: high
+  rationale: False adoption could create incorrect governance rule.
+  findings:
+    - finding_id: F-002
+      type: misuse_risk
+      description: Statement can be mistaken for approved automation authority.
+      severity: high
+  required_actions:
+    - Clarify whether statement is orchestration or fachliche Entscheidung.
+  allowed_next_steps:
+    - human_review
+  blocked_next_steps:
+    - autonomous_approval
+
+value_steward_review:
+  role_name: architecture_value_steward
+  verdict: accepted_with_conditions
+  confidence: 0.64
+  risk_level: medium
+  rationale: Information may be useful if converted into a controlled candidate.
+  findings:
+    - finding_id: F-003
+      type: potential_value
+      description: Topic may clarify future governance model.
+      severity: low
+  required_actions:
+    - Add short problem statement.
+  allowed_next_steps:
+    - hypothesis
+  blocked_next_steps:
+    - final_guidance
+
+assurance_steward_review:
+  role_name: architecture_assurance_steward
+  verdict: blocked
+  confidence: 0.91
+  risk_level: high
+  rationale: Origin, evidence class, and traceability are missing.
+  findings:
+    - finding_id: F-004
+      type: missing_evidence
+      description: No source_id, fragment_id, evidence_class, or execution_context_id.
+      severity: high
+  required_actions:
+    - Add origin.
+    - Add evidence class.
+    - Add execution context.
+  allowed_next_steps:
+    - quarantine
+    - source_request
+  blocked_next_steps:
+    - production_rag
+    - training_dataset
+
+mournival_decision:
+  final_status: blocked
+  blocking_roles:
+    - architecture_assurance_steward
+    - architecture_risk_steward
+    - architecture_decision_steward
+  reason: Dirty Information lacks evidence and creates high misuse risk.
+  next_actions:
+    - Keep in quarantine.
+    - Create Source Request.
+    - Require Human Architect review.
+  human_review_required: true

@@ -1,0 +1,76 @@
+decision_steward_review:
+  role_name: architecture_decision_steward
+  verdict: accepted_with_conditions
+  confidence: 0.78
+  risk_level: medium
+  rationale: Claim can proceed after evidence class is visible.
+  findings:
+    - finding_id: F-001
+      type: missing_visible_evidence_class
+      description: Evidence class exists in context but is not shown in the artifact.
+      severity: medium
+  required_actions:
+    - Add evidence_class to claim metadata.
+  allowed_next_steps:
+    - rework
+    - human_confirmation
+  blocked_next_steps:
+    - production_rag
+
+risk_steward_review:
+  role_name: architecture_risk_steward
+  verdict: accepted_with_conditions
+  confidence: 0.72
+  risk_level: medium
+  rationale: Wrong reuse could affect downstream architecture decisions.
+  findings:
+    - finding_id: F-002
+      type: reuse_risk
+      description: Claim may be reused outside its execution context.
+      severity: medium
+  required_actions:
+    - Add execution_context_id.
+  allowed_next_steps:
+    - rework
+  blocked_next_steps:
+    - training_dataset
+
+value_steward_review:
+  role_name: architecture_value_steward
+  verdict: accepted
+  confidence: 0.84
+  risk_level: low
+  rationale: Claim is understandable and useful for architecture guidance.
+  findings: []
+  required_actions: []
+  allowed_next_steps:
+    - publish_after_conditions
+  blocked_next_steps: []
+
+assurance_steward_review:
+  role_name: architecture_assurance_steward
+  verdict: accepted_with_conditions
+  confidence: 0.76
+  risk_level: medium
+  rationale: Source exists, but metadata must be visible before productive use.
+  findings:
+    - finding_id: F-003
+      type: incomplete_traceability
+      description: Source ID exists but fragment ID is missing.
+      severity: medium
+  required_actions:
+    - Add fragment_id.
+  allowed_next_steps:
+    - rework
+  blocked_next_steps:
+    - production_rag
+
+mournival_decision:
+  final_status: accepted_with_conditions
+  blocking_roles: []
+  reason: Claim can proceed after evidence class, execution context, and fragment ID are visible.
+  next_actions:
+    - Add evidence_class.
+    - Add execution_context_id.
+    - Add fragment_id.
+  human_review_required: true

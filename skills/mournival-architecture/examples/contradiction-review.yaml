@@ -1,0 +1,83 @@
+decision_steward_review:
+  role_name: architecture_decision_steward
+  verdict: requires_human_review
+  confidence: 0.73
+  risk_level: medium
+  rationale: Contradiction affects architecture decision record.
+  findings:
+    - finding_id: F-001
+      type: decision_needed
+      description: Conflicting versions cannot both be authoritative.
+      severity: medium
+  required_actions:
+    - Create ADR or context split.
+  allowed_next_steps:
+    - human_review
+    - adr
+  blocked_next_steps:
+    - overwrite_existing_claim
+
+risk_steward_review:
+  role_name: architecture_risk_steward
+  verdict: accepted_with_conditions
+  confidence: 0.68
+  risk_level: medium
+  rationale: Wrong resolution could mislead downstream consumers.
+  findings:
+    - finding_id: F-002
+      type: semantic_drift
+      description: Terms changed meaning across versions.
+      severity: medium
+  required_actions:
+    - Preserve both contexts until resolved.
+  allowed_next_steps:
+    - context_split
+  blocked_next_steps:
+    - silent_merge
+
+value_steward_review:
+  role_name: architecture_value_steward
+  verdict: accepted_with_conditions
+  confidence: 0.71
+  risk_level: low
+  rationale: Users can work with the contradiction if it is documented clearly.
+  findings:
+    - finding_id: F-003
+      type: documentation_gap
+      description: No user-facing explanation of version difference.
+      severity: medium
+  required_actions:
+    - Add contradiction note.
+  allowed_next_steps:
+    - publish_with_warning
+  blocked_next_steps:
+    - publish_as_single_truth
+
+assurance_steward_review:
+  role_name: architecture_assurance_steward
+  verdict: requires_human_review
+  confidence: 0.79
+  risk_level: medium
+  rationale: Evidence differs by version and execution context.
+  findings:
+    - finding_id: F-004
+      type: context_conflict
+      description: Source A and Source B apply to different execution contexts.
+      severity: medium
+  required_actions:
+    - Record version and execution context for each claim.
+  allowed_next_steps:
+    - context_split
+  blocked_next_steps:
+    - production_rag_without_context
+
+mournival_decision:
+  final_status: requires_human_review
+  blocking_roles:
+    - architecture_assurance_steward
+  reason: Contradiction needs context split or ADR before productive use.
+  next_actions:
+    - Record contexts.
+    - Draft ADR.
+    - Request Human Architect decision.
+  human_review_required: true

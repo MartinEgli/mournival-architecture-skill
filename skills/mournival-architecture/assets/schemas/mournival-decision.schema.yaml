@@ -1,0 +1,33 @@
+type: object
+required:
+  - final_status
+  - blocking_roles
+  - reason
+  - next_actions
+  - human_review_required
+properties:
+  final_status:
+    type: string
+    enum:
+      - accepted
+      - accepted_with_conditions
+      - blocked
+      - requires_human_review
+      - rejected
+  blocking_roles:
+    type: array
+    items:
+      type: string
+      enum:
+        - architecture_decision_steward
+        - architecture_risk_steward
+        - architecture_value_steward
+        - architecture_assurance_steward
+  reason:
+    type: string
+  next_actions:
+    type: array
+    items:
+      type: string
+  human_review_required:
+    type: boolean
