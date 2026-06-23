@@ -51,6 +51,8 @@ this skill for evidence, risk, value, assurance, and go/no-go review.
   consolidate their findings.
 - Always end with Consolidated Mournival Decision.
 - Separate evidence, inference, assumption, and gap.
+- Keep every finding, veto, status, diagram element, and consolidated decision
+  traceable to source IDs, supplied artifacts, or explicitly marked gaps.
 - Never accept unsupported truth claims as productive knowledge.
 - Never lower evidence requirements for convenience.
 - Never allow Dirty Information into productive use without review state,
@@ -159,6 +161,7 @@ productive-use gate. Load:
 ## Evidence Handling
 
 Use `references/review-process.md`.
+Use `references/evidence-traceability.md`.
 
 Required labels:
 
@@ -187,6 +190,7 @@ Before final answer, verify:
 - role collaboration order was followed
 - veto rules are applied
 - missing evidence is not treated as evidence
+- findings and consolidated decision include traceability or explicit gaps
 - blocked next steps are explicit
 - allowed next steps are explicit
 - human review requirement is explicit
