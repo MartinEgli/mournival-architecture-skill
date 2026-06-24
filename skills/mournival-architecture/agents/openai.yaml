@@ -1,6 +1,8 @@
 interface:
   display_name: "Mournival Architecture"
   short_description: "Four-steward architecture review"
+  icon_small: "./assets/mournival-architecture-small.svg"
+  icon_large: "./assets/mournival-architecture.svg"
   default_prompt: "Use $mournival-architecture to review this architecture claim with Decision, Risk, Value, and Assurance stewards."
 
 policy:
