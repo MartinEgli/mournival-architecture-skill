@@ -170,6 +170,9 @@ Required labels:
 - Assumption: useful but unverified.
 - Gap: missing item that can change the decision.
 
+Include an Evidence Receipt for substantial findings, decisions, diagrams, or
+recommendations.
+
 ## Output Contracts
 
 Use `assets/templates/mournival-output-template.md` unless user asks for another
