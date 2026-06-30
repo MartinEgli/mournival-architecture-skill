@@ -44,3 +44,10 @@ The expected review shape is:
 6. Required Actions
 7. Blocked Next Steps
 8. Allowed Next Steps
+
+## Continuous Improvement
+
+This skill supports an explicit feedback loop. Use /mournival-architecture feedback to
+capture lessons and /mournival-architecture improve to propose changes. Improvements must
+remain traceable, validated, committed on a feature branch, and pushed before
+they become part of the released skill behavior.
